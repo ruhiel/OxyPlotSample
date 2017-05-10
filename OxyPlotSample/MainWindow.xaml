@@ -5,8 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OxyPlotSample"
         mc:Ignorable="d"
+        xmlns:vm="clr-namespace:OxyPlotSample.ViewModels"
+        xmlns:oxy="http://oxyplot.org/wpf"
         Title="MainWindow" Height="350" Width="525">
+    <Window.DataContext>
+        <vm:MainWindowViewModel />
+    </Window.DataContext>
     <Grid>
-        
+        <oxy:Plot>
+            <oxy:Plot.Series >
+                <oxy:LineSeries ItemsSource="{Binding DataList}" />
+            </oxy:Plot.Series>
+        </oxy:Plot>
     </Grid>
 </Window>
