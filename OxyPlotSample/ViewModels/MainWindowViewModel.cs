@@ -19,8 +19,19 @@ namespace OxyPlotSample.ViewModels
                 {new DataPoint(8, 3)},
                 {new DataPoint(12, 5)},
             };
+
+            DataList2 = new List<DataPoint>
+            {
+                {new DataPoint(0,8) },
+                {new DataPoint(2,4) },
+                {new DataPoint(5,6) },
+                {new DataPoint(7,12) },
+                {new DataPoint(13,17) },
+            };
         }
 
         public List<DataPoint> DataList { get; }
+
+        public List<DataPoint> DataList2 { get; }
     }
 }

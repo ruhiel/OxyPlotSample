@@ -12,10 +12,48 @@
         <vm:MainWindowViewModel />
     </Window.DataContext>
     <Grid>
-        <oxy:Plot>
-            <oxy:Plot.Series >
-                <oxy:LineSeries ItemsSource="{Binding DataList}" />
+        <oxy:Plot Background="#FF1A1A1A" Padding="20"
+                  PlotAreaBorderColor="Transparent"
+                  LegendBackground="#66333333" LegendSymbolLength="30"
+                  LegendTextColor="#CCCCCCCC"
+                  LegendTitle="グラフの種類" LegendTitleColor="#CCAAAAAA"
+                  Title="サンプルグラフ" TitleColor="Gray" TitlePadding="20"
+                  Subtitle="OxyPlotのサンプルグラフです" TextColor="Gray">
+            <oxy:Plot.Series>
+
+                <oxy:AreaSeries ItemsSource="{Binding DataList2}" LineStyle="Solid" Color="Aqua"
+                                MarkerType="Square" MarkerFill="Blue" MarkerStroke="DarkBlue"
+                                Title="サンプルエリアグラフ" />
+
+                <oxy:LinearBarSeries ItemsSource="{Binding DataList}"
+                                     StrokeColor="OrangeRed" BarWidth="30" FillColor="DarkOrange" Title="サンプル棒グラフ" />
+
+                <oxy:LineSeries ItemsSource="{Binding DataList}" BrokenLineStyle="LongDash"
+                                LineStyle="Dash" MarkerSize="5" MarkerType="Circle"
+                                MarkerStroke="DarkGreen" MarkerStrokeThickness="2"
+                                MarkerFill="GreenYellow"
+                                Title="サンプル線グラフ" />
+
             </oxy:Plot.Series>
+
+            <oxy:Plot.Axes>
+                <oxy:LinearAxis Position="Left" AxislineColor="Gray"
+                                AxislineStyle="Solid"
+                                MajorGridlineStyle="Solid" MajorGridlineColor="Gray"
+                                MinorGridlineStyle="Dot" MinorGridlineColor="Gray"
+                                TextColor="Gray" TickStyle="None"
+                                StartPosition="-0.01" Maximum="20"
+                                IntervalLength="150"
+                                Title="X軸" TitleColor="Gray" />
+
+                <oxy:LinearAxis Position="Bottom" AxislineColor="Gray" AxislineStyle="Solid"
+                                MajorGridlineStyle="Solid" MajorGridlineColor="Gray"
+                                MinorGridlineStyle="Dot" MinorGridlineColor="Gray"
+                                TextColor="Gray" TickStyle="None" Maximum="15"
+                                IntervalLength="200" StartPosition="-0.01"
+                                Title="Y軸" TitleColor="Gray" />
+
+            </oxy:Plot.Axes>
         </oxy:Plot>
     </Grid>
 </Window>
